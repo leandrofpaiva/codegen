@@ -1,0 +1,75 @@
+package ${package};
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+/**
+ * Entity implementation class for Entity: ${className}
+ * 
+ * @author javadev
+ * @version 1.0
+ *
+ */
+@SuppressWarnings("serial")
+@Entity
+@Table(name = "TB_${className.toUpperCase()}")
+public class ${className} implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+#foreach( $fields in ${list} )
+#if ($fields.constraint == "primary_key")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "${fields.name.toUpperCase()}")
+    private ${fields.type} ${fields.name};
+#elseif ($fields.constraint == "OneToMany")
+    @OneToMany(mappedBy = "${fields.mappedBy}", targetEntity = ${fields.type}.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<${fields.type}> ${fields.name} = new ArrayList<${fields.type}>();
+#elseif ($fields.constraint == "ManyToOne")
+	@ManyToOne
+    @JoinColumn(name = "ID_${fields.name.toUpperCase()}")
+    private ${fields.type} ${fields.name};
+#else
+    @Column(name = "${fields.name.toUpperCase()}")
+    private ${fields.type} ${fields.name};
+#end
+	
+#end
+    public ${className}() {
+        super();
+    }
+
+#foreach( $fields in ${list} )
+#if ($fields.constraint == "OneToMany")
+    public List<${fields.type}> get$utils.firstToUpperCase(${fields.name})() {
+        return ${fields.name};
+    }
+
+    public void set$utils.firstToUpperCase(${fields.name})(List<${fields.type}> ${fields.name}) {
+        this.${fields.name} = ${fields.name};
+    }
+#else
+    public ${fields.type} get$utils.firstToUpperCase(${fields.name})() {
+        return ${fields.name};
+    }
+
+    public void set$utils.firstToUpperCase(${fields.name})(${fields.type} ${fields.name}) {
+        this.${fields.name} = ${fields.name};
+    }
+#end
+#end
+
+}

@@ -1,0 +1,35 @@
+      <div class="modal-header btn-primary">
+        <button type="button" class="close" data-dismiss="modal" ng-click="cancel();"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Incluir $formName</h4>
+      </div>
+      
+      <form name="$formName.toLowerCase()_form" novalidate >
+        <input type="hidden" ng-model="item.id"/>
+        <div class="modal-body">
+ #foreach( $fields in $formList )  
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label>$fields.name</label>
+                <input type="text" name="$fields.name" ng-model="item.$fields.name" class="form-control" placeholder="$fields.name" autofocus required maxlength="40">
+                <div class="alert alert-danger" role="alert" ng-show="$formName_form.$fields.name.$error.required && $formName_form.submitted">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" ></span>
+                  <span class="sr-only">Error:</span>
+                  $fields.name Requerido!
+                </div>
+              </div>
+            </div>  
+          </div>
+ #end
+        </div> <!-- /.modal-body -->
+      
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" ng-click="cancel();">
+            <span class="fa fa-undo fa-fw"></span>Cancelar
+          </button>
+          <button type="button" ng-disabled="isDisabled" class="btn btn-primary" ng-click="saveItem(item);">
+            <span class="fa fa-save fa-fw"></span>Confirmar
+          </button>
+        </div>
+      </form>
+   

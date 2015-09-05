@@ -1,0 +1,18 @@
+1 - Criando um projeto para construção de plugin a partir de um archetype:
+
+mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-mojo
+
+2 - Atualizando o repositorio com o plugin
+
+mvn install
+
+3 - Gerando os templates com base no model.xml
+
+mvn br.com.codegen.template.plugin:spring-service:1.0:generate
+
+-----
+
+Obs: 
+
+Caso ocorra alguma alteração no codegen deve-se regerar o plugin novamente para pegar a atualização da ferramenta
+

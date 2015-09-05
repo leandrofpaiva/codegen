@@ -1,0 +1,10 @@
+Toda alteração no codegen implica nas seguintes atividades:
+
+1 - Compilar o codegen
+
+mvn install
+
+2 - compilar o projeto do plugin
+
+mvn install
+

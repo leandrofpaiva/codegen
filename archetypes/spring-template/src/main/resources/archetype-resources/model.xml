@@ -1,0 +1,6 @@
+<templates>
+  <class name="Template" package="${groupId}">
+    <attribute name="id" type="Integer" size="8" constraint="primary_key"/>
+    <attribute name="name" type="String" size="50" constraint=""/>
+  </class>
+</templates>

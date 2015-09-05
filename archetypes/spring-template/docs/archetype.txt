@@ -1,0 +1,35 @@
+Archetype
+
+1 - Criar o projeto do archetype
+
+2 - Teste e instalar 
+
+3 - fazer o deploy no servidor (Quando estiver usando o archiva, por exemplo)
+
+  mvn deploy
+  
+4 - Atualizar no servidor do Archiva o archetype-catalog.xml (dentro do repositorio do archiva)
+
+Ex:
+
+    <archetype>
+      <groupId>br.com.codegen.archetypes</groupId>
+      <artifactId>spring-services</artifactId>
+      <version>1.0</version>
+      <description>Maven Archetype to generate a Spring Template based project skeleton.</description>
+    </archetype>
+
+5 - Digitar o comando de qualquer máquina para criar o archetype (última versão)
+
+
+mvn archetype:generate -DarchetypeCatalog=http://10.250.193.14:8080/repository/codegen.internal/br/com/codegen/spring/archetype/1.0/archetype-catalog.xml -DarchetypeGroupId=br.com.codegen.spring.archetype -DarchetypeArtifactId=spring-arch
+
+mvn archetype:generate -DarchetypeGroupId=br.com.codegen.archetypes -DarchetypeArtifactId=spring-services
+
+-----------
+
+Dica:
+
+Criando um archetype a partir de um projeto já existente:
+
+mvn archetype:create-from-project

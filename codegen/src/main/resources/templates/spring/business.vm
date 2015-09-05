@@ -1,0 +1,60 @@
+package ${package};
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import ${packageBase}.business.interfaces.I${className}Business;
+import ${packageBase}.entities.${className};
+import ${packageBase}.repositories.${className}Repository;
+
+/**
+ * Classe de Servico - ${className}Business
+ * 
+ * @author javadev
+ */
+@Component
+public class ${className}Business implements I${className}Business {
+
+    /**
+     * Entity Manager
+     */
+    @PersistenceContext
+    private EntityManager em;
+
+    /**
+     * Repository
+     */
+    @Autowired
+    private ${className}Repository repository;
+
+    @Override
+    public ${className} create(${className} ${className.toLowerCase()}) {
+        return repository.save(${className.toLowerCase()});
+    }
+
+    @Override
+    public ${className} read(Integer id) {
+        return repository.findOne(id);
+    }
+
+    @Override
+    public ${className} update(${className} ${className.toLowerCase()}) {
+        return repository.save(${className.toLowerCase()});
+    }
+
+    @Override
+    public void delete(Integer id) {
+        repository.delete(id);
+    }
+
+    @Override
+    public List<${className}> list() {
+        return repository.findAll();
+    }
+
+}

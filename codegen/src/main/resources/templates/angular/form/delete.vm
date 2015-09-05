@@ -1,0 +1,16 @@
+	  <div class="modal-header btn-primary">
+        <button type="button" class="close" data-dismiss="modal" ng-click="cancel();"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title"><i class="fa fa-user fa-fw"></i> Deseja confirmar a Exclus&ccedil;&atilde;o do $formName?</h4>
+      </div>
+	  
+      <div class="modal-body">
+        <p>Clique em Confirmar para excluir o $formName, ou Cancelar para n&atilde;o efetuar a Opera&ccedil;&atilde;o!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="cancel();">
+          <span class="fa fa-undo fa-fw"></span>Cancelar
+        </button>
+        <button type="button" ng-disabled="isDisabled" class="btn btn-primary" ng-click="deleteItem(item);">
+          <span class="fa fa-save fa-fw"></span>Confirmar
+        </button>
+      </div>

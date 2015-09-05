@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.com.codegen.archetypes</groupId>
+  <artifactId>spring-template</artifactId>
+  <packaging>maven-archetype</packaging>
+  <version>1.0</version>
+  <name>Spring Archetype Template</name>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>2.3</version>
+      </extension>
+    </extensions>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-archetype-plugin</artifactId>
+          <version>2.3</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <description>Spring Boot Starter Parent</description>
+
+  <url>http://codegen.com/</url>
+
+  <developers>
+    <developer>
+      <id>leandro.paiva</id>
+      <name>Leandro Fernandes de Paiva</name>
+      <email>leandrof.paiva@gmail.com</email>
+      <organization>Codegen</organization>
+      <organizationUrl>http://www.codegen.com</organizationUrl>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/pesca-services</url>
+  </scm>
+</project>

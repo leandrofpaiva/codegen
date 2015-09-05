@@ -1,0 +1,19 @@
+mvn deploy:deploy-file -DgroupId=<group-id> \
+  -DartifactId=<artifact-id> \
+  -Dversion=<version> \
+  -Dpackaging=<type-of-packaging> \
+  -Dfile=<path-to-file> \
+  -DrepositoryId=<id-to-map-on-server-section-of-settings.xml> \
+  -Durl=<url-of-the-repository-to-deploy>
+
+
+mvn deploy:deploy-file -DgroupId=safegrant -DartifactId=SafeGrantAPI -Dversion=1.0 -Dpackaging=jar -Dfile=SafeGrantAPI-1.0.jar -DrepositoryId=codegen.internal -Durl=http://10.250.193.14:8080/repository/codegen.internal
+
+
+
+
+
+
+mvn deploy:deploy-file -DgroupId=org.primefaces.THEME -DartifactId=codegen-theme -Dversion=2.0.0 -Dpackaging=jar -Dfile=codegen-theme-2.0.0.jar -DrepositoryId=codegen.internal -Durl=http://10.250.193.14:8080/repository/codegen.internal
+
+mvn deploy:deploy-file -DgroupId=org.primefaces.THEME -DartifactId=codegen-theme -Dversion=1.0.1 -Dpackaging=jar -Dfile=codegen-theme-1.0.1.jar -DrepositoryId=codegen.internal -Durl=http://10.250.193.14:8080/repository/codegen.internal

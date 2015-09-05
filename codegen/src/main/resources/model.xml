@@ -1,0 +1,15 @@
+<templates>
+  <class name="Categoria" package="br.com.pesca.core">
+    <attribute name="id" type="Integer" size="8" constraint="primary_key"/>
+    <attribute name="nome" type="String" size="50" constraint=""/>
+	<attribute name="descricao" type="String" size="150" constraint=""/>
+	<attribute name="subCategorias" type="SubCategoria" size="" constraint="OneToMany" mappedBy="categoria"/>
+  </class>
+
+  <class name="SubCategoria" package="br.com.pesca.core">
+    <attribute name="id" type="Integer" size="8" constraint="primary_key"/>
+    <attribute name="nome" type="String" size="50" constraint=""/>
+	<attribute name="descricao" type="String" size="150" constraint=""/>
+	<attribute name="categoria" type="Categoria" size="" constraint="ManyToOne"/>
+  </class>
+</templates>

@@ -1,0 +1,58 @@
+package ${package};
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import ${packageBase}.business.interfaces.I${className}Business;
+import ${packageBase}.entities.${className};
+
+@RestController
+@RequestMapping("/${className.toLowerCase()}")
+public class ${className}Service {
+
+    @Autowired
+    private I${className}Business ${className.toLowerCase()}Business;
+
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    public ResponseEntity<${className}> create(
+            @RequestBody ${className} ${className.toLowerCase()}) {
+        ${className} t = ${className.toLowerCase()}Business.create(${className.toLowerCase()});
+        return new ResponseEntity<${className}>(t, HttpStatus.OK);
+    }
+
+    // Ex: http://localhost:8080/${className.toLowerCase()}/get/2
+    @RequestMapping(value = "/read/{id}", method = RequestMethod.GET)
+    public ResponseEntity<${className}> read(@PathVariable("id") Integer id) {
+        ${className} ${className.toLowerCase()} = ${className.toLowerCase()}Business.read(id);
+        return new ResponseEntity<${className}>(${className.toLowerCase()}, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
+    public ResponseEntity<${className}> update(
+            @RequestBody ${className} ${className.toLowerCase()}) {
+        ${className} t = ${className.toLowerCase()}Business.update(${className.toLowerCase()});
+        return new ResponseEntity<${className}>(t, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<String> delete(@PathVariable("id") Integer id) {
+        ${className.toLowerCase()}Business.delete(id);
+        return new ResponseEntity<String>("OK", HttpStatus.OK);
+    }
+
+    // Ex: http://localhost:8080/${className.toLowerCase()}/list
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public List<${className}> list() {
+        List<${className}> list = ${className.toLowerCase()}Business.list();
+        return list;
+    }
+
+}

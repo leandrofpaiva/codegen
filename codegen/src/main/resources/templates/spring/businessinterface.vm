@@ -1,0 +1,52 @@
+package ${package};
+
+import java.util.List;
+
+import ${packageBase}.entities.${className};
+
+public interface I${className}Business {
+
+    /**
+     * Cria o registro de ${className}
+     * 
+     * @param ${className.toLowerCase()}
+     *            Registro que sera criado
+     * @return ${className}
+     */
+    public ${className} create(${className} ${className.toLowerCase()});
+
+    /**
+     * Retorna o Registro com base no ID informado
+     * 
+     * @param id
+     *            Identificador do Registro
+     * @return ${className}
+     */
+    public ${className} read(Integer id);
+
+    /**
+     * Atualiza o registro de ${className}
+     * 
+     * @param ${className.toLowerCase()}
+     *            Registro que sera criado
+     * @return ${className}
+     */
+    public ${className} update(${className} ${className.toLowerCase()});
+
+    /**
+     * Exclui o registro de ${className}
+     * 
+     * @param id
+     *            Identificador do Registro
+     * @return ${className}
+     */
+    public void delete(Integer id);
+
+    /**
+     * Retorna a Lista de ${className}
+     * 
+     * @return List<${className}>
+     */
+    public List<${className}> list();
+
+}

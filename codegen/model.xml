@@ -1,0 +1,31 @@
+<templates>
+  <class name="Curso" package="br.com.upper.web">
+    <attribute name="id" type="Integer" size="8" constraint="primary_key"/>
+    <attribute name="nome" type="String" size="50" constraint=""/>
+	<attribute name="descricao" type="String" size="150" constraint=""/>
+	<attribute name="ativo" type="String" size="50" constraint=""/>
+  </class>
+
+  <class name="Contrato" package="br.com.pesca.core">
+    <attribute name="id" type="Integer" size="8" constraint="primary_key"/>
+    <attribute name="id_turma" type="String" size="50" constraint=""/>
+	<attribute name="observacao" type="String" size="150" constraint=""/>
+	<attribute name="status" type="Categoria" size="50" constraint=""/>
+	<attribute name="valor" type="Categoria" size="50" constraint=""/>
+	<attribute name="data_inicio" type="Categoria" size="50" constraint=""/>
+	<attribute name="data_fim" type="Categoria" size="50" constraint=""/>
+	<attribute name="data_cancelamento" type="Categoria" size="50" constraint=""/>
+  </class>
+  
+  <class name="Turma" package="br.com.pesca.core">
+    <attribute name="id" type="Integer" size="8" constraint="primary_key"/>
+    <attribute name="id_curso" type="Integer" size="8" constraint="primary_key"/>
+    <attribute name="id_usuario" type="String" size="50" constraint=""/>
+	<attribute name="hora_inicial" type="String" size="50" constraint=""/>
+	<attribute name="hora_final" type="String" size="50" constraint=""/>
+	<attribute name="sala" type="String" size="50" constraint=""/>
+	<attribute name="status" type="String" size="50" constraint=""/>
+	<attribute name="descricao" type="String" size="150" constraint=""/>
+	<attribute name="ativo" type="String" size="50" constraint=""/>
+  </class>
+</templates>
